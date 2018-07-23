@@ -1,0 +1,37 @@
+.header {
+  position: relative;
+  height: 70px;
+  background-color: rgb(67,93,125);
+}
+
+.header-left {
+  color: white;
+  padding: 10px
+}
+
+.buttons {
+  margin-left: 5px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+tr {
+  transition: background-color, 1s;
+}
+
+tr:hover {
+  background-color:#f5f5f5;
+}
+
+i {
+  cursor: pointer;
+}
+
+i:hover {
+  color: grey;
+}
+
+.fa-trash {
+  color: red;
+}

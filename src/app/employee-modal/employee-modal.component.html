@@ -1,0 +1,71 @@
+<h2 mat-dialog-title>{{ isEditing ? "Edit" : "Add" }} Employee</h2>
+<mat-dialog-content>
+  <div class="row">
+  <div class="col-xs-12">
+  <form class="form-control" #f="ngForm">
+    <div class="row">
+      <div class="col-sm-5 form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          required
+          placeholder="Enter name"
+          [(ngModel)]="employee.name"
+          #name="ngModel"
+          id="name"
+          name="name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 form-group">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="employee.email"
+          #email="ngModel"
+          type="text"
+          required
+          email
+          placeholder="Enter email"
+          id="email"
+          name="email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 form-group">
+        <label for="address">Address</label>
+        <input
+          [(ngModel)]="employee.address"
+          #address="ngModel"
+          required
+          placeholder="Enter Address"
+          type="text"
+          id="address"
+          name="address">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 form-group">
+        <label for="phone">Phone</label>
+        <input
+          [(ngModel)]="employee.phone"
+          placeholder="Enter phone"
+          #phone="ngModel"
+          required
+          pattern="[0-9]+"
+          type="phone"
+          id="phone"
+          name="phone">
+      </div>
+    </div>
+  </form>
+  </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="row">
+    <div>
+      <button class="btn btn-success" [disabled]="f.invalid" (click)="closeDialog()">Save</button>
+      <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</mat-dialog-actions>

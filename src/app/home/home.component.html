@@ -1,0 +1,45 @@
+<div class="header">
+  <div class="header-left">
+    <h3>Manage Employees</h3>
+  </div>
+  <div class="buttons">
+    <button type="button"
+            class="btn-danger"
+            (click)="removeEmployees()"><i class="fas fa-minus-circle"></i>Delete
+    </button>
+    <button type="button"
+            class="btn-success"
+            (click)="openDialog()"><i class="fas fa-plus-circle"></i>Add new employee
+    </button>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th><input
+        type="checkbox"
+        [(ngModel)]="itemChecked"
+        (click)="selectAllEmployees(itemChecked)"></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>address</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let employee of employees; let i=index">
+    <tr *ngIf="employee">
+      <td><input
+          [(ngModel)]="employee.removed"
+          type="checkbox"></td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.address}}</td>
+      <td>{{employee.phone}}</td>
+      <td>
+        <i (click)="editEmployee(employee)" class="fas fa-user-edit"></i>
+        <i (click)="deleteEmployee(employee)" class="fas fa-trash"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
